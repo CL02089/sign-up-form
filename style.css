@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: 'Norse-Bold';
+  src: url('/Norse-Bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.container {
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+
+.background-logo {
+  background-image: url(img/halie-west-25xggax4bSA-unsplash.jpg);
+  background-size: cover;
+}
+
+.odin-logo {
+  font-family: 'Norse-Bold';
+  font-size: 3rem;
+  color: #ffffff;
+  display: flex;
+}
