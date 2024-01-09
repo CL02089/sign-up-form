@@ -41,6 +41,13 @@ img {
 
 .text-and-form {
   margin: 12rem 5rem 12rem 5rem;
+  background-color: #f9fafb;
+}
+
+.text {
+  padding-left: 3px;
+  margin-bottom: 15px;
+  max-width: 700px;
 }
 
 p {
@@ -52,6 +59,43 @@ p:first-child {
   padding-bottom: 2rem;
 }
 
-form {
-  display: block;
+fieldset {
+  border: none;
+}
+
+.field-container {
+  display: flex;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  gap: 10rem;
+  align-items: flex-start;
+  padding-right: 32rem;
+  box-shadow: 0.1rem 0.3rem 0.2rem rgba(202, 202, 202, 0.5);
+  background-color: #ffffff;
+}
+
+.column {
+  width: 100%;
+  padding: 10px;
+}
+
+.column input[type='text'],
+.column input[type='tel'],
+.column input[type='password'],
+.column input[type='email'] {
+  width: 100%;
+  padding: 7px;
+  margin-bottom: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+}
+
+.column label {
+  font-size: 14px;
+  margin-bottom: 1px;
+}
+
+#form-header {
+  padding-left: 3px;
 }
