@@ -1,3 +1,7 @@
+:root {
+  --left-space: 48px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -27,6 +31,12 @@ img {
 .background-logo {
   background-image: url(img/halie-west-25xggax4bSA-unsplash.jpg);
   background-size: cover;
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  text-align: center;
 }
 
 .odin-logo {
@@ -39,9 +49,18 @@ img {
   background-color: rgba(20, 18, 18, 0.5);
 }
 
-.text-and-form {
-  margin: 12rem 5rem 12rem 5rem;
+.right-side {
+  display: flex;
+  flex: 5;
+  flex-direction: column;
+  padding: 12rem 5rem 12rem 5rem;
   background-color: #f9fafb;
+}
+
+.text-and-form {
+  background-color: #f9fafb;
+  margin-left: -3rem;
+  width: 100%;
 }
 
 .text {
@@ -61,29 +80,31 @@ p:first-child {
 
 fieldset {
   border: none;
+
+  background-color: #ffffff;
+}
+.fields {
+  padding-left: var(--left-space);
 }
 
 .field-container {
   display: flex;
   width: 100%;
   max-width: 700px;
-  margin: 0 auto;
-  gap: 10rem;
-  align-items: flex-start;
-  padding-right: 32rem;
+  margin-left: -3.5rem;
+
+  gap: 8rem;
+  padding-right: 30rem;
   box-shadow: 0.1rem 0.3rem 0.2rem rgba(202, 202, 202, 0.5);
-  background-color: #ffffff;
 }
 
 .column {
   width: 100%;
   padding: 10px;
+  max-width: 500px;
 }
 
-.column input[type='text'],
-.column input[type='tel'],
-.column input[type='password'],
-.column input[type='email'] {
+input {
   width: 100%;
   padding: 7px;
   margin-bottom: 1rem;
@@ -98,4 +119,47 @@ fieldset {
 
 #form-header {
   padding-left: 3px;
+  margin-left: -3rem;
+}
+
+input[type='text']:focus,
+input[type='tel']:focus,
+input[type='password']:focus,
+input[type='email']:focus {
+  outline: #3970df;
+  border: 2px solid #3970df;
+  box-shadow: 0.1rem 0.1rem 0.2rem rgba(66, 84, 187, 0.363);
+}
+.buttons {
+  height: 100%;
+  margin-top: 3rem;
+  margin-left: -3.5rem;
+  background-color: #f9fafb;
+}
+
+button {
+  padding: 12px 36px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #596d48;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+.buttons > div {
+  font-size: 16px;
+}
+
+a {
+  color: #596d48;
+  font-weight: bold;
+}
+
+#error {
+  display: none;
+  color: red;
+  font-size: 10px;
+  margin-top: -8px;
 }

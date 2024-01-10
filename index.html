@@ -14,55 +14,86 @@
           <h1 id="odin">ODIN</h1>
         </div>
       </div>
-      <div class="text-and-form">
-        <div class="text">
-          <p>
-            This in your life to help you realize your deepest dreams! Sign up
-            now This is not a real online service! You know you need something
-            like to get started.
-          </p>
-          <p>You <em>know</em> you want to.</p>
+
+      <div class="right-side">
+        <div class="text-and-form">
+          <div class="text">
+            <p>
+              This in your life to help you realize your deepest dreams! Sign up
+              now This is not a real online service! You know you need something
+              like to get started.
+            </p>
+            <p>You <em>know</em> you want to.</p>
+          </div>
         </div>
 
         <div class="form">
           <form>
-            <fieldset class="fields">
-              <div id="form-header">
-                <p>Let's do this!</p>
+            <div id="form-header">
+              <p>Let's do this!</p>
+            </div>
+            <div class="field-container">
+              <div class="column">
+                <label for="fname">FIRST NAME</label>
+                <input type="text" id="fname" name="fname" required />
+
+                <label for="email">E-MAIL</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="password">PASSWORD</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  minlength="8"
+                  maxlength="20"
+                  required
+                />
               </div>
-              <div class="field-container">
-                <div class="column">
-                  <label for="fname">FIRST NAME</label>
-                  <input type="text" id="fname" name="fname" />
 
-                  <label for="email">E-MAIL</label>
-                  <input type="email" id="email" name="email" />
+              <div class="column">
+                <label for="lname">LAST NAME</label>
+                <input type="text" id="lname" name="lname" required />
 
-                  <label for="password">PASSWORD</label>
-                  <input type="password" id="password" name="password" />
-                </div>
+                <label for="phone">PHONE NUMBER</label>
+                <input type="tel" id="phone" name="phone" />
 
-                <div class="column">
-                  <label for="lname">LAST NAME</label>
-                  <input type="text" id="lname" name="lname" />
+                <label for="confirmPassword">CONFIRM PASSWORD</label>
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  minlength="8"
+                  maxlength="20"
+                  required
+                />
 
-                  <label for="phone">PHONE NUMBER</label>
-                  <input type="tel" id="phone" name="phone" />
-
-                  <label for="conf-password">CONFIRM PASSWORD</label>
-                  <input
-                    type="password"
-                    id="conf-password"
-                    name="conf-password"
-                  />
-                </div>
+                <span id="error"> Passwords do not match! </span>
               </div>
-            </fieldset>
-            <button type="submit">Create Account</button>
-            <div>Already have an account <a href="">Log in</a></div>
+            </div>
+            <div class="buttons">
+              <button type="submit">Create Account</button>
+              <div>Already have an account <a href="">Log in</a></div>
+            </div>
           </form>
         </div>
       </div>
     </div>
   </body>
+
+  <script>
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('confirmPassword');
+    const errorElement = document.getElementById('error');
+
+    const validatePassword = function () {
+      if (passwordInput.value !== confirmPasswordInput.value) {
+        errorElement.style.display = 'block';
+      } else {
+        errorElement.style.display = 'none';
+      }
+    };
+
+    confirmPasswordInput.addEventListener('input', validatePassword);
+  </script>
 </html>
